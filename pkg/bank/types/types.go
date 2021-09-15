@@ -31,5 +31,5 @@ type Card struct {
 type PaymentSource struct {
 	Type    string
 	Number  string
-	Balance types.Money
+	Balance Money
 }

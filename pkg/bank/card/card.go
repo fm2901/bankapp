@@ -17,7 +17,7 @@ func PaymentSources(cards []types.Card) []types.PaymentSource {
 
 		result = append(result, types.PaymentSource{
 			Type:    "Карта",
-			Number:  card.PAN,
+			Number:  string(card.PAN),
 			Balance: card.Balance,
 		})
 	}

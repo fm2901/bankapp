@@ -6,7 +6,7 @@ func PaymentSources(cards []types.Card) []types.PaymentSource {
 	var result []types.PaymentSource
 
 	for _, card := range cards {
-		
+
 		if !card.Active {
 			continue
 		}
@@ -15,7 +15,11 @@ func PaymentSources(cards []types.Card) []types.PaymentSource {
 			continue
 		}
 
-		result = append(result, card)
+		result = append(result, types.PaymentSource{
+			Type:    "Карта",
+			Number:  card.Number,
+			Balance: card.Balance,
+		})
 	}
 
 	return result
